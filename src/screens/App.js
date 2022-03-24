@@ -11,6 +11,18 @@ import componentName from './comments';
 import profile from './profile';
 import Login from './login';
 import SignUp from './SignUp';
+// import { initializeApp } from 'firebase/app';
+// import auth from '@react-native-firebase/auth';
+// import firebase from 'firebase';
+// const createUser = (email, password) => {
+//   try {
+//     auth().createUserWithEmailAndPassword(email, password);
+//   } catch (error) {
+//     alert(error);
+//   }
+// };
+// firebase.initializeApp();
+import { firebase, auth, firebaseConfig } from './config';
 
 const HomeStack = createNativeStackNavigator();
 
@@ -75,6 +87,12 @@ function tabBar() {
 }
 
 export default function App() {
+     
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+
+ 
   return (
     <NavigationContainer>
     <Stack.Navigator screenOptions={{headerShown:false}}>

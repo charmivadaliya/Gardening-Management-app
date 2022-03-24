@@ -9,13 +9,34 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-
-// import Home from '../screens/Home'
-// import {images} from '../constants';
+ 
+import auth from '@react-native-firebase/auth';
+import { useEffect, useState } from 'react';
+ 
 
 const { width : WIDTH } = Dimensions.get('window')
 
 const Login = ({navigation}) => { 
+  const user = auth().currentUser;
+  
+  //declaration of variable
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [initializing,setInitializing] = useState(true) 
+  function SignIn(){
+    auth().signInWithEmailAndPassword(email,password)
+    .then((response) => { console.log(response.user.uid)})
+    .catch(
+      
+    )
+    navigation.navigate('h');
+    // try{
+    //   auth().signInWithEmailAndPassword(email,password);
+    // }catch(error){
+    //   alert(error);
+    // }
+  };
+
   return(
     <ImageBackground source={require('../assets/img/garden2.png')} style={styles.backgroundContainer}>
       <View style={styles.inputContainer}>
@@ -24,6 +45,8 @@ const Login = ({navigation}) => {
           placeholder={'UserName'}
           placeholderTextColor={'#808080'}
           underlineColorAndroid='transparent'
+          // value={email}
+          onChangeText={setEmail}  
         />
         <TextInput
           style={styles.input}
@@ -32,9 +55,12 @@ const Login = ({navigation}) => {
           secureTextEntry={true}  
           placeholderTextColor={'#808080'}
           underlineColorAndroid='transparent'
+          // value={password} 
+          onChangeText={setPassword}
+
         />
         <TouchableOpacity style={styles.btnLogin}>
-          <Text style={styles.logintxt} onPress={() =>navigation.navigate('Home')}>Login</Text>
+          <Text style={styles.logintxt} onPress={SignIn}>Login</Text>
         </TouchableOpacity>
       </View>      
       <View style={styles.container2}>

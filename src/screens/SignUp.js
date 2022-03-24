@@ -18,10 +18,32 @@ import p1 from "../assets/img/f3.png"
 import p2 from "../assets/img/f4.png"
 import p3 from "../assets/img/f6.png"
 import p4 from "../assets/img/f7.png"
+import auth, { firebase } from '@react-native-firebase/auth';
+import { useEffect, useState } from 'react';
+
 const { width : WIDTH } = Dimensions.get('window')
 
 const SignUp = ({navigation}) =>{
-
+    const user = auth().currentUser;
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    // const [isLoading, setLoading] = useState(false);
+    function Register() {
+       try{
+           if( password.lenth<6){
+               alert("Enter valid password");
+               return;
+           }
+           firebase
+           .auth()
+           .createUserWithEmailAndPassword(email,password);
+           navigation.navigate('h');
+        }catch(error){
+            console.log(error.toString())
+        }
+         
+         
+    }
     const [newPlants, setNewPlants] = React.useState([
        {
           id: 0,
@@ -105,7 +127,7 @@ const SignUp = ({navigation}) =>{
             </View>
         )
     }
-    return(
+    return (
             <ImageBackground source={require('../assets/img/garden2.png')} style={styles.backgroundContainer}>
                 <SafeAreaView style={{flex:1}}>
                     <ProgressSteps>
@@ -117,6 +139,7 @@ const SignUp = ({navigation}) =>{
                                     placeholder={'Email'}
                                     placeholderTextColor={'#808080'}
                                     underlineColorAndroid='transparent'
+                                    onChangeText={(text)=>setEmail(text)}
                                 /> 
                                 <TextInput 
                                     style={styles.input}
@@ -129,6 +152,8 @@ const SignUp = ({navigation}) =>{
                                     placeholder={'Password'}
                                     placeholderTextColor={'#808080'}
                                     underlineColorAndroid='transparent'
+                                    onChangeText={(text)=>setPassword(text)}
+
                                 /> 
                                 <TextInput 
                                     style={styles.input}
@@ -151,6 +176,7 @@ const SignUp = ({navigation}) =>{
                                     placeholder={'Name'}
                                     placeholderTextColor={'#808080'}
                                     underlineColorAndroid='transparent'
+                                    
                                 />
                                 <TextInput 
                                     style={styles.input}
@@ -206,7 +232,7 @@ const SignUp = ({navigation}) =>{
                             previousBtnStyle={styles.button} 
                             nextBtnTextStyle={styles.text} 
                             nextBtnStyle={styles.button}
-                            onSubmit={() =>navigation.navigate('h')}>
+                            onSubmit={Register}>
                             <Text style={styles.textPlantinterest}>Plants of your interest?</Text>
                             <FlatList
                                 numColumns={3}

@@ -78,9 +78,9 @@ export default class profile extends Component {
                                 {/* <Text style={{marginHorizontal:wp('4%'),fontSize:Platform.isPad === true ? 14 : 10,justifyContent:'center'}}>Contact No :</Text> */}
                                 <TextInput keyboardType="number-pad" style={{fontSize:Platform.isPad === true ? 20 : 16,color:"#000",marginHorizontal:wp('4%'),fontWeight:'bold',maxWidth:wp('65%'),height: Platform.isPad === true ? hp('4%') : hp('5%')}} placeholder="Enter Number..." placeholderTextColor="#000"></TextInput>
                             </View>
-                            <View style={{justifyContent:'center',marginRight:'5%'}}>
+                            {/* <View style={{justifyContent:'center',marginRight:'5%'}}>
                                 <Image source={require('../assets/img/pencil.png')}></Image>
-                            </View>
+                            </View> */}
                         </View>
                     </View>
                 </View>
@@ -91,9 +91,9 @@ export default class profile extends Component {
                                 {/* <Text style={{marginHorizontal:wp('4%'),fontSize:Platform.isPad === true ? 14 : 10,justifyContent:'center'}}>Password :</Text> */}
                                 <TextInput secureTextEntry={true} style={{fontSize:Platform.isPad === true ? 20 : 16,color:"#000",marginHorizontal:wp('4%'),fontWeight:'bold',maxWidth:wp('65%'),height: Platform.isPad === true ? hp('4%') : hp('5%')}} placeholder="Enter Password..." placeholderTextColor="#000"></TextInput>
                             </View>
-                            <View style={{justifyContent:'center',marginRight:'5%'}}>
+                            {/* <View style={{justifyContent:'center',marginRight:'5%'}}>
                                 <Image source={require('../assets/img/pencil.png')}></Image>
-                            </View>
+                            </View> */}
                         </View>
                     </View>
                 </View>  
