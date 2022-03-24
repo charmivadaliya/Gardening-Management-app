@@ -7,21 +7,12 @@ import home from './home';
 import plant from './plant';
 import newPost from './newPost';
 import postView from './postView';
+import postView2 from './postView2'; 
 import componentName from './comments';
 import profile from './profile';
 import Login from './login';
 import SignUp from './SignUp';
-// import { initializeApp } from 'firebase/app';
-// import auth from '@react-native-firebase/auth';
-// import firebase from 'firebase';
-// const createUser = (email, password) => {
-//   try {
-//     auth().createUserWithEmailAndPassword(email, password);
-//   } catch (error) {
-//     alert(error);
-//   }
-// };
-// firebase.initializeApp();
+ 
 import { firebase, auth, firebaseConfig } from './config';
 
 const HomeStack = createNativeStackNavigator();
@@ -100,6 +91,7 @@ export default function App() {
       <Stack.Screen name="h" component={tabBar}/>
       <Stack.Screen name="newPost" component={newPost}/>
       <Stack.Screen name="postView" component={postView}/>
+      <Stack.Screen name="postView2" component={postView2}/>
       <Stack.Screen name="comments" component={componentName}/>
       <Stack.Screen name="SignUp" component={SignUp}  />
     </Stack.Navigator>

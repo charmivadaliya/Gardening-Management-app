@@ -32,7 +32,7 @@ export default class home extends Component {
                 <Image source={require('../assets/img/p1.png')} style={{borderRadius:60}}></Image>
               </View>
               <View style={{justifyContent:'center',marginHorizontal:wp('2%')}}>
-                <Text style={{color:'#fff',fontSize:20,fontWeight:'bold'}}>Dr.plant</Text>
+                <Text style={{color:'#fff',fontSize:20,fontWeight:'bold'}}>Charmi Vadaliya</Text>
               </View>
               <View style={{flexDirection:'row',justifyContent:'flex-end',flex:1,alignItems:'center',marginEnd:wp('15%')}}>
                 <Text style={{color:'#fff',fontSize:14,maxWidth:30}}>2h ago</Text>
@@ -52,9 +52,40 @@ export default class home extends Component {
             </View>
              </Pressable>
            </View>
-
+           
+           {/* second */}
            <View style={{margin:hp('2%')}}>
-            <View style={{flexDirection:'row',flex:1}}>
+             <Pressable onPress={() => this.props.navigation.navigate('postView2')}>
+             <View style={{flexDirection:'row',flex:1}}>
+              <View style={{}}>
+                <Image source={require('../assets/img/p1.png')} style={{borderRadius:60}}></Image>
+              </View>
+              <View style={{justifyContent:'center',marginHorizontal:wp('2%')}}>
+                <Text style={{color:'#fff',fontSize:20,fontWeight:'bold'}}>Janak gadhesariya</Text>
+              </View>
+              <View style={{flexDirection:'row',justifyContent:'flex-end',flex:1,alignItems:'center',marginEnd:wp('15%')}}>
+                <Text style={{color:'#fff',fontSize:14,maxWidth:30}}>2h ago</Text>
+              </View>
+            </View>
+            <View style={{marginHorizontal:wp('7%'),marginVertical:hp('1%')}}>
+              <Image source={require('../assets/img/Post3.png')} style={{borderRadius:10}}></Image>
+            </View>
+            <View style={{marginHorizontal:wp('7%'),marginVertical:hp('1%'),flexDirection:'row'}}>
+              <Image source={require('../assets/img/like.png')} style={{marginHorizontal:wp('1%')}}></Image>
+              <Text style={{color:'#fff',fontSize:14,marginHorizontal:wp('1%')}}>24</Text>
+              <Image source={require('../assets/img/Comments.png')} style={{marginHorizontal:wp('1%')}}></Image>
+              <Text style={{color:'#fff',fontSize:14,marginHorizontal:wp('1%')}}>2</Text>
+            </View>
+            <View style={{marginHorizontal:wp('7%'),marginVertical:hp('1%')}}>
+              <Text style={{color:'#fff',fontSize:16,maxWidth:300}}>Lorem ipsum doler sit amet, consetetur sadipscing elitr, sed diam</Text>
+            </View>
+             </Pressable>
+           </View>
+
+            {/* third */}
+           <View style={{margin:hp('2%')}}>
+             <Pressable >
+            <View style={{flexDirection:'row',flex:1}} >
               <View style={{}}>
                 <Image source={require('../assets/img/p2.png')} style={{borderRadius:60}}></Image>
               </View>
@@ -77,10 +108,12 @@ export default class home extends Component {
             <View style={{marginHorizontal:wp('7%'),marginVertical:hp('1%')}}>
               <Text style={{color:'#fff',fontSize:16,maxWidth:300}}>Lorem ipsum doler sit amet, consetetur sadipscing elitr, sed diam</Text>
             </View>
+            </Pressable>
            </View>
 
+            {/* fourth */}
            <View style={{margin:hp('2%')}}>
-             <Pressable onPress={() => this.props.navigation.navigate('postView')}>
+             <Pressable onPress={() => this.props.navigation.navigate('postView2')}>
              <View style={{flexDirection:'row',flex:1}}>
               <View style={{}}>
                 <Image source={require('../assets/img/p1.png')} style={{borderRadius:60}}></Image>
@@ -93,7 +126,7 @@ export default class home extends Component {
               </View>
             </View>
             <View style={{marginHorizontal:wp('7%'),marginVertical:hp('1%')}}>
-              <Image source={require('../assets/img/Post1.png')} style={{borderRadius:10}}></Image>
+              <Image source={require('../assets/img/Post3.png')} style={{borderRadius:10}}></Image>
             </View>
             <View style={{marginHorizontal:wp('7%'),marginVertical:hp('1%'),flexDirection:'row'}}>
               <Image source={require('../assets/img/like.png')} style={{marginHorizontal:wp('1%')}}></Image>
